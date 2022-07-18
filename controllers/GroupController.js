@@ -19,7 +19,6 @@ class GroupController {
   }
   async delete(req, res) {
     try {
-      console.log(req);
       const group = await GroupService.delete(req.params.id);
       res.json(group);
     } catch (e) {
@@ -30,6 +29,14 @@ class GroupController {
     try {
       const group = await GroupService.update(req.body);
       res.json(group);
+    } catch (e) {
+      res.status(500).json(e);
+    }
+  }
+  async updateGroups(req, res) {
+    try {
+      const groups = await GroupService.updateGroups(req.body);
+      res.json(groups);
     } catch (e) {
       res.status(500).json(e);
     }

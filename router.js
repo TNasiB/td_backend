@@ -11,5 +11,6 @@ router.post("/group", GroupController.create);
 router.get("/group", GroupController.getAll);
 router.delete("/group/:id", GroupController.delete);
 router.put("/group", GroupController.update);
+router.put("/groups", GroupController.updateGroups);
 
 export default router;

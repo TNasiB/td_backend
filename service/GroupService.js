@@ -25,6 +25,10 @@ class GroupService {
     });
     return group;
   }
+  async updateGroups(groups) {
+    const changedGroups = await Group.find();
+    return changedGroups;
+  }
 }
 
 export default new GroupService();
