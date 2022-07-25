@@ -41,6 +41,14 @@ class GroupController {
       res.status(500).json(e);
     }
   }
+  async updateTaskOrder(req, res) {
+    try {
+      const groups = await GroupService.updateTaskOrder(req.body);
+      res.json(groups);
+    } catch (e) {
+      res.status(500).json(e);
+    }
+  }
 }
 
 export default new GroupController();
